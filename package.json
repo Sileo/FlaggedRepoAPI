@@ -1,0 +1,11 @@
+{
+  "name": "flaggedrepoapi",
+  "version": "1.0.0",
+  "description": "A simple API written in node to return if a sileo repo is flagged.",
+  "main": "index.js",
+  "author": "nullpixel & Sileo Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
