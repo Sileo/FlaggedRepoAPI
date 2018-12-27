@@ -2,7 +2,7 @@
 
 # Flagged Repo API
 
-A simple API written in node to return if a Sileo repo is flagged. A production version of this API can be found at [flagged-api.getsileo.app](https://flagged-api.getsileo.app).
+A simple API written in node to return if a Sileo repo is flagged. A production version of this API can be found at [flagged-repo-api.getsileo.app](https://flagged-repo-api.getsileo.app).
 
 ## Why is my repo flagged?
 
