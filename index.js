@@ -36,7 +36,11 @@ const regenerateRegex = () => {
 
 app.use(express.json());
 
-app.get("/info", (req, res) => {
+app.get("/", (_, res) => { 
+    return res.redirect(301, "https://github.com/SileoApp/FlaggedRepoAPI");
+});
+
+app.get("/info", (_, res) => {
     return res.json({
         version: repolist.version,
         updated: repolist.updated,
