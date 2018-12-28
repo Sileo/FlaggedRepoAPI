@@ -44,6 +44,7 @@ Returns `true` if the repo is flagged, `false` if it's not.
 
 **Example request:**
 
+**Content-Type:** `application/json`
 ```json
 {"url": "https://pirates.com"}
 ```
