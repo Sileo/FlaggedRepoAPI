@@ -38,6 +38,8 @@ app.post("/flagged", (req, res) => {
     return res.send(isPiracy);
 });
 
-initDatabase();
+initDatabase()
+    .then(() => console.log("Database connected."));
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Flagged Repo API listening on http://localhost:${port}.`));
