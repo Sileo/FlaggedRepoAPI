@@ -1,4 +1,4 @@
-<img align="left" src="http://getsileo.app/images/sileoicon.png" width="150" height="150"></img>
+<img align="left" src="http://getsileo.app/img/icon.png" width="150" height="150"></img>
 
 # Flagged Repo API
 
