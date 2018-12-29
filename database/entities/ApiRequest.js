@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 const {
-    sequelize
+    getSequelize
 } = require("../index");
-const ApiRequest = sequelize().define('ApiRequest', {
+const ApiRequest = getSequelize().define('ApiRequest', {
     isPiracy: {
         type: Sequelize.BOOLEAN
     }

@@ -5,9 +5,9 @@ const {
 const sequelize = new Sequelize(Database.database, Database.username, Database.password, {
     host: Database.host,
     port: Database.port,
-    dialect: 'postgres',
+    dialect: Database.type,
     operatorsAliases: false,
-
+    logging: false,
     pool: {
         max: 5,
         min: 0,
@@ -15,10 +15,11 @@ const sequelize = new Sequelize(Database.database, Database.username, Database.p
         idle: 10000
     },
 });
-exports.init = () => {
+exports.initDatabase = () => {
     return sequelize.authenticate();
 }
 
-exports.sequelize = () => {
+// A getter to access the object from other files.
+exports.getSequelize = () => {
     return sequelize;
 }

@@ -3,7 +3,7 @@ const {
 } = require("url");
 const express = require("express");
 const {
-    init
+    initDatabase
 } = require("./database/index");
 const {
     ApiRequest
@@ -38,6 +38,6 @@ app.post("/flagged", (req, res) => {
     return res.send(isPiracy);
 });
 
-init();
+initDatabase();
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Flagged Repo API listening on http://localhost:${port}.`));
