@@ -1,4 +1,10 @@
 class Configuration {
+    static get Misc() {
+        return {
+            version: 1,
+            updated: ""
+        };
+    }
     static get Database() {
         return {
             type: "postgres",
