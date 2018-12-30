@@ -1,13 +1,10 @@
-const {
-    parse
-} = require("url");
+const { parse } = require("url");
 const express = require("express");
-const {
-    initDatabase
-} = require("./database/index");
-const {
-    ApiRequest
-} = require("./database/entities/ApiRequest");
+const { initDatabase } = require("./database/index");
+const { ApiRequest } = require("./database/entities/ApiRequest");
+const { infoController } = require("./controllers/info");
+const { flaggedController } = require("./controllers/flagged");
+const { homepageController } = require("./controllers/homepageController");
 const app = express();
 
 const repolist = require("./config/flagged-repos.json");
@@ -15,31 +12,13 @@ const flaggedRepos = repolist.flaggedRepoURLs;
 
 app.use(express.json());
 
-app.get("/", (_, res) => {
-    return res.redirect("https://github.com/SileoApp/FlaggedRepoAPI");
-});
+app.get("/", homepageController);
+app.get("/info", infoController);
+app.post("/flagged", flaggedController);
 
-app.get("/info", (_, res) => {
-    return res.json({
-        version: repolist.version,
-        updated: repolist.updated,
-        flagged_count: repolist.flaggedRepoURLs.length
-    });
-});
-
-app.post("/flagged", (req, res) => {
-    if (!req.body.url) return res.status(400).end();
-    const isPiracy = flaggedRepos.some(x => req.body.url.includes(x));
-    ApiRequest.sync().then(() => {
-        ApiRequest.create({
-            isPiracy
-        });
-    });
-    return res.send(isPiracy);
-});
-
-initDatabase()
-    .then(() => console.log("Database connected."));
+initDatabase().then(() => console.log("Database connected."));
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Flagged Repo API listening on http://localhost:${port}.`));
+app.listen(port, () =>
+    console.log(`Flagged Repo API listening on http://localhost:${port}.`)
+);
