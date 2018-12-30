@@ -46,8 +46,6 @@ const flaggedController = (req, res) => {
         .replace(/^www\./, "")
         .trim();
 
-    console.log(normalised);
-
     const isPiracy = repoRegexes.some((regex) => {
         return normalised.match(regex) !== null;
     });
