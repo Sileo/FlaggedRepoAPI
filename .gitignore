@@ -1,3 +1,5 @@
 .DS_Store
 node_modules
 config/flagged-repos.json
+config/config.js
+main.db

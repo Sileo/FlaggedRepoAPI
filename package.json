@@ -6,6 +6,8 @@
   "author": "nullpixel & Sileo Team",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "sequelize": "^4.42.0",
+    "sqlite3": "^4.0.4"
   }
 }

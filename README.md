@@ -21,8 +21,9 @@ Additionally, if you wish to report a dangerous repo, please contact [@SileoSupp
 
 1. `yarn install`
 2. Move `config/flagged-repos.example.json` to `config/flagged-repos.json` and add some sample repos for testing
-3. `node index.js`
-4. :tada:
+3. move `config/config.example.js` to `config/config.js` and fill out the values accordingly.
+4. `node index.js`
+5. :tada:
 
 ## Developers
 
