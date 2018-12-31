@@ -1,4 +1,3 @@
-const { parse } = require("url");
 const express = require("express");
 const { initDatabase } = require("./database/index");
 const { infoController } = require("./controllers/info");
